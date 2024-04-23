@@ -16,7 +16,7 @@ namespace RPG_GameLogic.Interfaces
 
         float CritMultiplier{get;}
 
-
+        string Description{get;}
     }
 
 }

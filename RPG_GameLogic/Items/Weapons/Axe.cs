@@ -11,29 +11,18 @@ namespace RPG_GameLogic.Items.Weapons
     internal class Axe : IWeapon
     {
         private static Random random = new Random();
-        private int axeDmg;
+        public float Damage{get; set;}
 
-        public int damage {get; set;}
+        public float CritChance => 0.2f;
+        public float CritMultiplier => 2.0f;
+
+        public string Description => "Axe: Will deal between 1 to 5 hitpoints and have 20% chance of getting a Critical Hit";
 
         public void Attack(IUnit target)
         {
-            damage = random.Next(1,5);
-            damage += AxeCrit();
-            target.TakeDamage(damage);
-        }
-        public int AxeCrit()
-        {
-            double critChance = 0.2;
-            double randValue = random.NextDouble();
-            if (randValue < critChance)
-            {
-                return damage * 2;
-            }
-            else
-            {
-                return 0;
-            }
-            
+            Damage = random.Next(1,5);
+            Damage += WeaponUtility.Crit(Damage, CritChance, CritMultiplier);
+            target.TakeDamage((int)Damage);
         }
     }
 }

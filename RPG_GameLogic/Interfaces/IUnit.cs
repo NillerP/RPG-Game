@@ -11,7 +11,7 @@ namespace RPG_GameLogic.Interfaces
         string Name { get; }
         string Description { get; }
         int MaxHealth { get; }
-        int CurrentHealth {  get; }
+        int CurrentHealth {  get; set;}
         void Move();
         void TakeDamage(int damage);
         void Attack(int damage);

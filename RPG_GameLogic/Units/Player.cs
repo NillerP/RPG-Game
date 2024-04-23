@@ -9,22 +9,22 @@ namespace RPG_GameLogic.Units
 {
     internal class Player : IUnit
     {
-        public string Name => throw new NotImplementedException();
+        public string Name => "Main Character";
 
-        public string Description => throw new NotImplementedException();
+        public string Description => "Have plot armor, cannot die";
 
-        public int MaxHealth => throw new NotImplementedException();
+        public int MaxHealth => 50;
 
-        public int CurrentHealth => throw new NotImplementedException();
+        public int CurrentHealth {get; set;} = 50;
 
         public void Attack(int damage)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Enemy attacks for {damage} damage!");
         }
 
         public void Die()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enemy Defeated");
         }
 
         public void Move()
@@ -34,7 +34,13 @@ namespace RPG_GameLogic.Units
 
         public void TakeDamage(int damage)
         {
-            throw new NotImplementedException();
+            CurrentHealth -= damage;
+            Console.WriteLine($"Player takes {damage} damage!");
+
+            if (CurrentHealth <= 0)
+            { 
+                Die();
+            }
         }
     }
 }
