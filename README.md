@@ -5,8 +5,7 @@ The project split into two main parts:
 
 ```shRPG_Game: ```The main application to start the game.
 
-```sh
-RPG_GameLogic:``` This contains the game logic, including units, attacks, factories for creating weapons and attacks, and the game management logic.
+```shRPG_GameLogic:``` This contains the game logic, including units, attacks, factories for creating weapons and attacks, and the game management logic.
 
 #How to Run
 
