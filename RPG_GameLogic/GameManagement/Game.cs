@@ -78,20 +78,44 @@ namespace RPG_GameLogic.GameManagement
         {
             IUnit enemy = new Enemy();
             Console.WriteLine($"Your First opponent is: {enemy.Name}\n");
+            Console.WriteLine("Weapon axe\n\n");
             Console.WriteLine($"Backstory: {enemy.Description}");
             Console.ReadLine();
             Console.Clear();
         }
         public static void Fight()
         {
+            Console.WriteLine($"{player.Name} vs {enemy.Name}");
+            Console.WriteLine("You strike first");
+            Console.ReadLine();
             bool fight = true;
             while (fight == true)
             {
-                player.Attack(enemy);
-                Console.ReadLine();
+                if (fight)
+                {
+                    Console.Clear();
+                    Console.WriteLine("\n(You) Rudolf Strikes at Quandale\n");
+                    player.Attack(enemy);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Quandale Strikes at (You) Rudolf\n");
+                    enemy.Attack(player);
+                    Console.WriteLine();
+                    Console.ReadLine();
+                    if(player.CurrentHealth <= 0 || enemy.CurrentHealth <= 0)
+                    {
+                        Console.ReadLine();
+                        break;
+                    }
+                }
             }
+            Console.ReadLine();
+            Console.Clear();
+
+
+
+
         }
-        
+
     }
 }
 

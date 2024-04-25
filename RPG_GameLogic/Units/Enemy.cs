@@ -12,21 +12,23 @@ namespace RPG_GameLogic.Units
     {
         public string Name => "Quandale";
 
-        public string Description => "Quandale was raised and forced to steal on the street to survive after being abandom from his parents. He soon got caught stealing from a rich man and got two choices either lose his head or the Gladiator pits.";
+        public string Description => "\nQuandale was raised and forced to steal on the street to survive after being abandom from his parents. He soon got caught stealing from a rich man and got two choices either lose his head or the Gladiator pits.";
 
         public int MaxHealth => 50;
 
         public int CurrentHealth {get; set;} = 50;
+        Player player =new Player();
 
         public void Attack(IUnit enemy)
         {
             Axe axe = new Axe();
-            axe.Attack(enemy);
+            axe.Attack(player);
         }
 
         public void Die()
         {
-            Console.WriteLine("Quandale is Defeated");
+            Console.Clear();
+            Console.WriteLine("Quandale was Defeated : YOU WON");
         }
 
         public void Move()

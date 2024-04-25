@@ -39,21 +39,21 @@ namespace RPG_GameLogic.Units
 
         public void Die()
         {
-            Console.WriteLine("Enemy Defeated");
+            Console.Clear();
+            Console.WriteLine("Rudolf was Defeated : YOU LOST");
         }
 
         public void Move()
         {
             throw new NotImplementedException();
         }
-
         public void TakeDamage(int damage)
         {
             CurrentHealth -= damage;
-            Console.WriteLine($"Player takes {damage} damage!");
+            Console.WriteLine($"Rudolf takes {damage} damage!\n\nRudolf overall health is : {CurrentHealth}");
 
             if (CurrentHealth <= 0)
-            { 
+            {
                 Die();
             }
         }
