@@ -9,9 +9,7 @@ namespace RPG_GameLogic.Interfaces
     internal interface IWeapon
     {
         void Attack(IUnit target);
-
         float Damage {get; set;}
-
         float CritChance{get;}
 
         float CritMultiplier{get;}

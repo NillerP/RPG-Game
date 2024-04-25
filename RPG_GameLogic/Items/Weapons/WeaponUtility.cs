@@ -6,11 +6,13 @@ internal static class WeaponUtility
             double randValue = random.NextDouble();
             if (randValue < critChance)
             {
-                return damage * critMultiplier;
+            Console.WriteLine("Crit!");
+            return damage * critMultiplier;
+            
             }
             else
             {
-                return 0.0f;
+                return damage;
             }
         }
     }

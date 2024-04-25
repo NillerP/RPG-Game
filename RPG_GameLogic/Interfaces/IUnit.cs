@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG_GameLogic.Units;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace RPG_GameLogic.Interfaces
         int CurrentHealth {  get; set;}
         void Move();
         void TakeDamage(int damage);
-        void Attack(int damage);
+        void Attack(IUnit enemy);
         void Die();
     }
 }

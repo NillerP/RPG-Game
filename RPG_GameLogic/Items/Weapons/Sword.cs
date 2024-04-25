@@ -14,14 +14,13 @@ namespace RPG_GameLogic.Items.Weapons
 
         public float CritChance => 0.5f;
         public float CritMultiplier => 2.0f;
-
         public string Description =>  "Sword: Will deal between 1 to 3 hitpoints and have 50% chance of getting a Critical Hit";
 
         public void Attack(IUnit target)
         {
-            Damage = random.Next(1,3);
-            Damage += WeaponUtility.Crit(Damage, CritChance, CritMultiplier);
-            target.TakeDamage((int)Damage);
+            Damage = random.Next(1, 4);
+            float critDamage = WeaponUtility.Crit(Damage, CritChance, CritMultiplier);
+            target.TakeDamage((int)critDamage);
         }
     }
 }

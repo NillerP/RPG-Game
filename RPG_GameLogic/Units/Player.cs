@@ -9,18 +9,33 @@ namespace RPG_GameLogic.Units
 {
     internal class Player : IUnit
     {
-        public string Name => "Main Character";
+        private IWeapon equippedWeapon;
 
-        public string Description => "Have plot armor, cannot die";
+        public string Name => "Rudolf";
+
+        public string Description => "Rudolf lived as a simple farmer after being sold by a desperate relative to settle a debt. With no training or experience, everyone thought he will meet his demise quickly in the arena.";
 
         public int MaxHealth => 50;
 
-        public int CurrentHealth {get; set;} = 50;
+        public int CurrentHealth { get; set; } = 50;
 
-        public void Attack(int damage)
+        public void EquipWeapon(IWeapon weapon)
         {
-            Console.WriteLine($"Enemy attacks for {damage} damage!");
+            equippedWeapon = weapon;
         }
+
+        public void Attack(IUnit enemy)
+        {
+            if (equippedWeapon == null)
+            {
+                Console.WriteLine("No weapon equipped!");
+                return;
+            }
+
+      
+            equippedWeapon.Attack(enemy);
+        }
+
 
         public void Die()
         {
