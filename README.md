@@ -12,6 +12,6 @@ RPG_GameLogic: This contains the game logic, including units, attacks, factories
 .Net Needed on your machine
 
 Run the command
-'''sh
+```sh
 dotnet run --project RPG_Game/RPG_Game.csproj
-'''
+```
