@@ -3,9 +3,9 @@ This is a console Role-Playing Game (RPG) implemented in C#. The game allows the
 
 The project split into two main parts:
 
-```shRPG_Game: ```The main application to start the game.
+1.```sh RPG_Game: ```The main application to start the game.
 
-```shRPG_GameLogic:``` This contains the game logic, including units, attacks, factories for creating weapons and attacks, and the game management logic.
+2.```sh RPG_GameLogic:``` This contains the game logic, including units, attacks, factories for creating weapons and attacks, and the game management logic.
 
 #How to Run
 
