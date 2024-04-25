@@ -1,5 +1,5 @@
 RPG Game
-This is a console Role-Playing Game (RPG) implemented in C#. The game allows the player to choose weapons to gain advantage against the enemy in a turn-based RPG.
+This is a console Role-Playing Game (RPG) implemented in C#. The game allows the player to choose weapons to gain advantage against the enemy in a turn-based fighting style.
 
 The project split into two main parts:
 
